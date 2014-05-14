@@ -22,11 +22,13 @@ var grunt = require('grunt');
     test.ifError(value)
 */
 
-exports.max_filesize = {
+exports.maxFilesize = {
+
   setUp: function(done) {
     // setup here if necessary
     done();
   },
+
   default_options: function(test) {
     test.expect(1);
 
@@ -36,6 +38,7 @@ exports.max_filesize = {
 
     test.done();
   },
+
   custom_options: function(test) {
     test.expect(1);
 
