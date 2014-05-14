@@ -29,7 +29,7 @@ module.exports = function(grunt) {
     },
 
     // Configuration to be run (and then tested).
-    max_filesize: {
+    maxFilesize: {
       default_options: {
         options: {
         },

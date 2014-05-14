@@ -13,7 +13,7 @@ module.exports = function(grunt) {
   // Please see the Grunt documentation for more information regarding task
   // creation: http://gruntjs.com/creating-tasks
 
-  grunt.registerMultiTask('max_filesize', 'Throws an error if files are over a certain size.', function() {
+  grunt.registerMultiTask('maxFilesize', 'Throws an error if files are over a certain size.', function() {
     // Merge task-specific and/or target-specific options with these defaults.
     var options = this.options({
       punctuation: '.',
