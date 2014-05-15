@@ -2,22 +2,22 @@
   "name": "grunt-max-filesize",
   "description": "Throws an error if files are over a certain size.",
   "version": "0.1.0",
-  "homepage": "https://github.com/aecorre/grunt-max-filesize",
+  "homepage": "https://github.com/alexcorre/grunt-max-filesize",
   "author": {
     "name": "Alex Corre",
     "email": "aecorre@linkedin.com"
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/aecorre/grunt-max-filesize.git"
+    "url": "git://github.com/alexcorre/grunt-max-filesize.git"
   },
   "bugs": {
-    "url": "https://github.com/aecorre/grunt-max-filesize/issues"
+    "url": "https://github.com/alexcorre/grunt-max-filesize/issues"
   },
   "licenses": [
     {
       "type": "MIT",
-      "url": "https://github.com/aecorre/grunt-max-filesize/blob/master/LICENSE-MIT"
+      "url": "https://github.com/alexcorre/grunt-max-filesize/blob/master/LICENSE-MIT"
     }
   ],
   "engines": {
