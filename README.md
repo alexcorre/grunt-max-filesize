@@ -1,6 +1,6 @@
 # grunt-max-filesize
 
-> Throws an error if files are over a certain size.
+> Throws an error if files are over a certain size, specified in bytes.
 
 ## Getting Started
 This plugin requires Grunt `~0.4.x`
