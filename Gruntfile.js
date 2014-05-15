@@ -1,6 +1,6 @@
 /*
  * grunt-max-filesize
- * https://github.com/aecorre/grunt-max-filesize
+ * https://github.com/alexcorre/grunt-max-filesize
  *
  * Copyright (c) 2014 Alex Corre
  * Licensed under the MIT license.
