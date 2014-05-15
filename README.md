@@ -17,14 +17,14 @@ Once the plugin has been installed, it may be enabled inside your Gruntfile with
 grunt.loadNpmTasks('grunt-max-filesize');
 ```
 
-## The "max_filesize" task
+## The "maxFilesize" task
 
 ### Overview
 In your project's Gruntfile, add a section named `max_filesize` to the data object passed into `grunt.initConfig()`.
 
 ```js
 grunt.initConfig({
-  max_filesize: {
+  maxFilesize: {
     options: {
       // Task-specific options go here.
     },
@@ -37,46 +37,34 @@ grunt.initConfig({
 
 ### Options
 
-#### options.separator
-Type: `String`
-Default value: `',  '`
+#### options.maxBytes
+Type: `Number`
+Default value: `undefined`
 
-A string value that is used to do something with whatever.
-
-#### options.punctuation
-Type: `String`
-Default value: `'.'`
-
-A string value that is used to do something else with whatever else.
+The maximum number of bytes a file can be. If any files are larger than this value a fatal error will be thrown.
 
 ### Usage Examples
 
 #### Default Options
-In this example, the default options are used to do something with whatever. So if the `testing` file has the content `Testing` and the `123` file had the content `1 2 3`, the generated result would be `Testing, 1 2 3.`
+There are no default options. If maxBytes option is not defined for the multitask or for subtasks, the maxFilesize will not run.
+
+#### Verify files under X bytes.
+Running this multitask will ensure that files in the `lib` directory are under 3000 bytes, and files in the `app` directory are under 10000 bytes. Using standard grunt file globbing works.
 
 ```js
 grunt.initConfig({
-  max_filesize: {
-    options: {},
-    files: {
-      'dest/default_options': ['src/testing', 'src/123'],
-    },
-  },
-});
-```
-
-#### Custom Options
-In this example, custom options are used to do something else with whatever else. So if the `testing` file has the content `Testing` and the `123` file had the content `1 2 3`, the generated result in this case would be `Testing: 1 2 3 !!!`
-
-```js
-grunt.initConfig({
-  max_filesize: {
-    options: {
-      separator: ': ',
-      punctuation: ' !!!',
-    },
-    files: {
-      'dest/default_options': ['src/testing', 'src/123'],
+  maxFilesize: {
+    libs: {
+      options: {
+        maxBytes: 3000
+      },
+      src: ['lib/*']
+    }
+    app: {
+      options: {
+        maxBytes: 10000
+      },
+      src: ['app/*']
     },
   },
 });
