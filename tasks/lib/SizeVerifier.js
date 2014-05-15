@@ -10,6 +10,7 @@
 
 var fs = require('fs');
 var grunt = require('grunt');
+var _ = require('underscore');
 
 /**
  * @module SizeVerifier
@@ -22,6 +23,18 @@ var grunt = require('grunt');
 var SizeVerifier = {
 
   /**
+   * Simple filter function to return true if file is under the given size
+   * in bytes.
+   *
+   * @param {Number} maxBytes - the maximum allowed size, in bytes.
+   * @param {String} filePath - the path to the file in question.
+   */
+  fileOverBytes: function(maxBytes, filePath) {
+    var stats = fs.statSync(filePath);
+    return stats.size > maxBytes;
+  },
+
+  /**
    * Verifies that all files in the files list are under the maxSize in bytes
    *
    * @param maxSize {number} - number of bytes that the file size must be less than
@@ -29,13 +42,7 @@ var SizeVerifier = {
    * @param files {array} - array of file paths
    */
   verifyFiles: function(maxBytes, files) {
-    var badFiles = [];
-    files.forEach(function(filePath) {
-      var stats = fs.statSync(filePath);
-      if (stats.size > maxBytes) {
-        badFiles.push(filePath);
-      }
-    });
+    var badFiles = files.filter(_.partial(SizeVerifier.fileOverBytes, maxBytes));
 
     if (badFiles.length > 0) {
       grunt.log.error('Some files are over [' + maxBytes + '] bytes.');
@@ -50,4 +57,5 @@ var SizeVerifier = {
 
 };
 
-module.exports.verifyFiles = SizeVerifier.verifyFiles;
+module.exports = SizeVerifier;
+
