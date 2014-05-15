@@ -27,7 +27,7 @@
     "test": "grunt test"
   },
   "dependencies": {
-    "underscore": "*"
+    "underscore": "1.6.x"
   },
   "devDependencies": {
     "grunt-cli": "*",
