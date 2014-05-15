@@ -41,12 +41,12 @@ grunt.initConfig({
 Type: `Number`
 Default value: `undefined`
 
-The maximum number of bytes a file can be. If any files are larger than this value a fatal error will be thrown.
+The maximum number of bytes a file can be. If any files are larger than this value a fatal error will be thrown, and the name of the files logged to the console.
 
 ### Usage Examples
 
 #### Default Options
-There are no default options. If maxBytes option is not defined for the multitask or for subtasks, the maxFilesize will not run.
+There are no default options. If maxBytes option is not defined for the task as a whole or specific targets, this task will do nothing.
 
 #### Verify files under X bytes.
 Running this multitask will ensure that files in the `lib` directory are under 3000 bytes, and files in the `app` directory are under 10000 bytes. Using standard grunt file globbing works.
