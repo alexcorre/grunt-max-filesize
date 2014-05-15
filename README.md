@@ -20,7 +20,7 @@ grunt.loadNpmTasks('grunt-max-filesize');
 ## The "maxFilesize" task
 
 ### Overview
-In your project's Gruntfile, add a section named `max_filesize` to the data object passed into `grunt.initConfig()`.
+In your project's Gruntfile, add a section named `maxFilesize` to the data object passed into `grunt.initConfig()`.
 
 ```js
 grunt.initConfig({
