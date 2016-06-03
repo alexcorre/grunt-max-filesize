@@ -1,7 +1,7 @@
 {
   "name": "grunt-max-filesize",
   "description": "Throws an error if files are over a certain size.",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "homepage": "https://github.com/alexcorre/grunt-max-filesize",
   "author": {
     "name": "Alex Corre",
